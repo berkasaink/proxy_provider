@@ -1,0 +1,84 @@
+proxies:
+- name: ID3 BUG 1
+  server: 104.18.2.198
+  port: 443
+  type: trojan
+  password: stb
+  network: ws
+  sni: id3.idssh.net
+  skip-cert-verify: true
+  udp: true
+  ws-opts:
+    path: /trojan
+    headers:
+        Host: id3.idssh.net
+
+- name: ID3 BUG 2
+  server: 104.18.1.196
+  port: 443
+  type: trojan
+  password: stb
+  network: ws
+  sni: id3.idssh.net
+  skip-cert-verify: true
+  udp: true
+  ws-opts:
+    path: /trojan
+    headers:
+        Host: id3.idssh.net
+
+- name: ID3 BUG 3
+  server: id3.idssh.net
+  port: 443
+  type: trojan
+  password: stb
+  network: ws
+  sni: v.whatsapp.net
+  skip-cert-verify: true
+  udp: true
+  ws-opts:
+    path: /trojan
+    headers:
+        Host: v.whatsapp.net
+
+- name: SG2 BUG 1
+  server: 104.18.2.198
+  port: 443
+  type: trojan
+  password: stb
+  network: ws
+  sni: sg-02.idssh.net
+  skip-cert-verify: true
+  udp: true
+  ws-opts:
+    path: /trojan
+    headers:
+        Host: sg-02.idssh.net
+
+- name: SG2 BUG 2
+  server: 104.18.1.196
+  port: 443
+  type: trojan
+  password: stb
+  network: ws
+  sni: sg-02.idssh.net
+  skip-cert-verify: true
+  udp: true
+  ws-opts:
+    path: /trojan
+    headers:
+        Host: sg-02.idssh.net
+
+- name: SG2 BUG 3
+  server: sg-02.idssh.net
+  port: 443
+  type: trojan
+  password: stb
+  network: ws
+  sni: v.whatsapp.net
+  skip-cert-verify: true
+  udp: true
+  ws-opts:
+    path: /trojan
+    headers:
+        Host: v.whatsapp.net
