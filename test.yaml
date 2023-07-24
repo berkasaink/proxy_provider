@@ -1,0 +1,599 @@
+port: 7890
+socks-port: 7891
+redir-port: 7892
+tproxy-port: 7893
+mixed-port: 7890
+allow-lan: true
+mode: rule
+log-level: info
+ipv6: false
+external-controller: 127.0.0.1:9090
+external-ui: folder
+interface-name: "*"
+secret: ""
+bind-address: "*"
+unified-delay: true
+profile:
+  store-selected: true
+  store-fake-ip: true
+dns:
+  enable: true
+  listen: 0.0.0.0:53
+  default-nameserver:
+    - 9.9.9.9
+    - 149.112.112.112
+  nameserver:
+    - 9.9.9.9 
+    - 149.112.112.112
+    - tls://dns.quad9.net:853
+    - https://dns.quad9.net/dns-query
+  fallback:
+    - tcp://1.1.1.1
+    - tcp://8.8.8.8
+  fallback-filter:
+    geoip: true
+    geoip-code: ID
+    ipcidr:
+    - 0.0.0.0/0
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+
+proxies:
+- name: ID3_AKRAB_BUG1
+  server: 104.18.2.198
+  port: 443
+  type: trojan
+  password: vvip-tes
+  network: ws
+  sni: id3.idssh.net
+  skip-cert-verify: true
+  udp: true
+  ws-opts:
+    path: /trojan
+    headers:
+        Host: id3.idssh.net
+
+- name: ID3_AKRAB_BUG2
+  server: 104.18.1.196
+  port: 443
+  type: trojan
+  password: vvip-tes
+  network: ws
+  sni: id3.idssh.net
+  skip-cert-verify: true
+  udp: true
+  ws-opts:
+    path: /trojan
+    headers:
+        Host: id3.idssh.net
+
+- name: ID3_AKRAB_BUG3
+  server: id3.idssh.net
+  port: 443
+  type: trojan
+  password: vvip-tes
+  network: ws
+  sni: v.whatsapp.net
+  skip-cert-verify: true
+  udp: true
+  ws-opts:
+    path: /trojan
+    headers:
+        Host: v.whatsapp.net
+
+- name: SG2_AKRAB_BUG1
+  server: 104.18.2.198
+  port: 443
+  type: trojan
+  password: vvip-tes
+  network: ws
+  sni: sg-02.idssh.net
+  skip-cert-verify: true
+  udp: true
+  ws-opts:
+    path: /trojan
+    headers:
+        Host: sg-02.idssh.net
+
+- name: SG2_AKRAB_BUG2
+  server: 104.18.1.196
+  port: 443
+  type: trojan
+  password: vvip-tes
+  network: ws
+  sni: sg-02.idssh.net
+  skip-cert-verify: true
+  udp: true
+  ws-opts:
+    path: /trojan
+    headers:
+        Host: sg-02.idssh.net
+
+- name: SG2_AKRAB_BUG3
+  server: sg-02.idssh.net
+  port: 443
+  type: trojan
+  password: vvip-tes
+  network: ws
+  sni: v.whatsapp.net
+  skip-cert-verify: true
+  udp: true
+  ws-opts:
+    path: /trojan
+    headers:
+        Host: v.whatsapp.net
+
+- name: SG7_AKRAB_BUG1
+  server: 104.18.2.198
+  port: 443
+  type: trojan
+  password: vvip-tes
+  network: ws
+  sni: sg-07.idssh.net
+  skip-cert-verify: true
+  udp: true
+  ws-opts:
+    path: /trojan
+    headers:
+        Host: sg-07.idssh.net
+
+- name: SG7_AKRAB_BUG2
+  server: 104.18.1.196
+  port: 443
+  type: trojan
+  password: vvip-tes
+  network: ws
+  sni: sg-07.idssh.net
+  skip-cert-verify: true
+  udp: true
+  ws-opts:
+    path: /trojan
+    headers:
+        Host: sg-07.idssh.net
+
+- name: SG7_AKRAB_BUG3
+  server: sg-07.idssh.net
+  port: 443
+  type: trojan
+  password: vvip-tes
+  network: ws
+  sni: v.whatsapp.net
+  skip-cert-verify: true
+  udp: true
+  ws-opts:
+    path: /trojan
+    headers:
+        Host: v.whatsapp.net
+
+- name: ID3_FLEX_BUG1
+  server: 104.16.51.111
+  port: 443
+  type: trojan
+  password: vvip-tes
+  network: ws
+  sni: id3.idssh.net
+  skip-cert-verify: true
+  udp: true
+  ws-opts:
+    path: /trojan
+    headers:
+        Host: id3.idssh.net
+
+- name: ID3_FLEX_BUG2
+  server: id3.idssh.net
+  port: 443
+  type: trojan
+  password: vvip-tes
+  network: ws
+  sni: v.whatsapp.net
+  skip-cert-verify: true
+  udp: true
+  ws-opts:
+    path: /trojan
+    headers:
+        Host: v.whatsapp.net
+
+- name: ID3_FLEX_BUG3
+  server: sogood.linefriends.com
+  port: 443
+  type: trojan
+  password: vvip-tes
+  network: ws
+  sni: id3.idssh.net
+  skip-cert-verify: true
+  udp: true
+  ws-opts:
+    path: /trojan
+    headers:
+        Host: id3.idssh.net
+
+- name: SG2_FLEX_BUG1
+  server: 104.16.51.111
+  port: 443
+  type: trojan
+  password: vvip-tes
+  network: ws
+  sni: sg-02.idssh.net
+  skip-cert-verify: true
+  udp: true
+  ws-opts:
+    path: /trojan
+    headers:
+        Host: sg-02.idssh.net
+
+- name: SG2_FLEX_BUG2
+  server: sg-02.idssh.net
+  port: 443
+  type: trojan
+  password: vvip-tes
+  network: ws
+  sni: v.whatsapp.net
+  skip-cert-verify: true
+  udp: true
+  ws-opts:
+    path: /trojan
+    headers:
+        Host: v.whatsapp.net
+
+- name: SG2_FLEX_BUG3
+  server: sogood.linefriends.com
+  port: 443
+  type: trojan
+  password: vvip-tes
+  network: ws
+  sni: sg-02.idssh.net
+  skip-cert-verify: true
+  udp: true
+  ws-opts:
+    path: /trojan
+    headers:
+        Host: sg-02.idssh.net
+
+- name: SG7_FLEX_BUG1
+  server: 104.16.51.111
+  port: 443
+  type: trojan
+  password: vvip-tes
+  network: ws
+  sni: sg-07.idssh.net
+  skip-cert-verify: true
+  udp: true
+  ws-opts:
+    path: /trojan
+    headers:
+        Host: sg-07.idssh.net
+
+- name: SG7_FLEX_BUG2
+  server: sg-07.idssh.net
+  port: 443
+  type: trojan
+  password: vvip-tes
+  network: ws
+  sni: v.whatsapp.net
+  skip-cert-verify: true
+  udp: true
+  ws-opts:
+    path: /trojan
+    headers:
+        Host: v.whatsapp.net
+
+- name: SG7_FLEX_BUG3
+  server: sogood.linefriends.com
+  port: 443
+  type: trojan
+  password: vvip-tes
+  network: ws
+  sni: sg-07.idssh.net
+  skip-cert-verify: true
+  udp: true
+  ws-opts:
+    path: /trojan
+    headers:
+        Host: sg-07.idssh.net
+
+- name: ID3_ISATEDU_BUG1
+  server: 104.16.66.85
+  port: 443
+  type: trojan
+  password: vvip-tes
+  network: ws
+  sni: id3.idssh.net
+  skip-cert-verify: true
+  udp: true
+  ws-opts:
+    path: /trojan
+    headers:
+        Host: id3.idssh.net
+        
+- name: ID3_ISATEDU_BUG2
+  server: 104.21.21.104
+  port: 443
+  type: trojan
+  password: vvip-tes
+  network: ws
+  sni: id3.idssh.net
+  skip-cert-verify: true
+  udp: true
+  ws-opts:
+    path: /trojan
+    headers:
+        Host: id3.idssh.net
+        
+- name: ID3_ISATEDU_BUG3
+  server: 104.18.25.139
+  port: 443
+  type: trojan
+  password: vvip-tes
+  network: ws
+  sni: id3.idssh.net
+  skip-cert-verify: true
+  udp: true
+  ws-opts:
+    path: /trojan
+    headers:
+        Host: id3.idssh.net
+
+- name: SG2_ISATEDU_BUG1
+  server: 104.16.66.85
+  port: 443
+  type: trojan
+  password: vvip-tes
+  network: ws
+  sni: sg-02.idssh.net
+  skip-cert-verify: true
+  udp: true
+  ws-opts:
+    path: /trojan
+    headers:
+        Host: sg-02.idssh.net
+        
+- name: SG2_ISATEDU_BUG2
+  server: 104.21.21.104
+  port: 443
+  type: trojan
+  password: vvip-tes
+  network: ws
+  sni: sg-02.idssh.net
+  skip-cert-verify: true
+  udp: true
+  ws-opts:
+    path: /trojan
+    headers:
+        Host: sg-02.idssh.net
+        
+- name: SG2_ISATEDU_BUG3
+  server: 104.18.25.139
+  port: 443
+  type: trojan
+  password: vvip-tes
+  network: ws
+  sni: sg-02.idssh.net
+  skip-cert-verify: true
+  udp: true
+  ws-opts:
+    path: /trojan
+    headers:
+        Host: sg-02.idssh.net
+
+- name: SG7_ISATEDU_BUG1
+  server: 104.16.66.85
+  port: 443
+  type: trojan
+  password: vvip-tes
+  network: ws
+  sni: sg-07.idssh.net
+  skip-cert-verify: true
+  udp: true
+  ws-opts:
+    path: /trojan
+    headers:
+        Host: sg-07.idssh.net
+        
+- name: SG7_ISATEDU_BUG2
+  server: 104.21.21.104
+  port: 443
+  type: trojan
+  password: vvip-tes
+  network: ws
+  sni: sg-07.idssh.net
+  skip-cert-verify: true
+  udp: true
+  ws-opts:
+    path: /trojan
+    headers:
+        Host: sg-07.idssh.net
+        
+- name: SG7_ISATEDU_BUG3
+  server: 104.18.25.139
+  port: 443
+  type: trojan
+  password: vvip-tes
+  network: ws
+  sni: sg-07.idssh.net
+  skip-cert-verify: true
+  udp: true
+  ws-opts:
+    path: /trojan
+    headers:
+        Host: sg-07.idssh.net
+        
+- name: ID3_ILPED_BUG1
+  server: 104.17.2.81
+  port: 443
+  type: trojan
+  password: vvip-tes
+  network: ws
+  sni: id3.idssh.net
+  skip-cert-verify: true
+  udp: true
+  ws-opts:
+    path: /trojan
+    headers:
+        Host: id3.idssh.net
+        
+- name: ID3_ILPED_BUG2
+  server: 104.17.3.81
+  port: 443
+  type: trojan
+  password: vvip-tes
+  network: ws
+  sni: id3.idssh.net
+  skip-cert-verify: true
+  udp: true
+  ws-opts:
+    path: /trojan
+    headers:
+        Host: id3.idssh.net
+
+- name: SG2_ILPED_BUG1
+  server: 104.17.2.81
+  port: 443
+  type: trojan
+  password: vvip-tes
+  network: ws
+  sni: sg-02.idssh.net
+  skip-cert-verify: true
+  udp: true
+  ws-opts:
+    path: /trojan
+    headers:
+        Host: sg-02.idssh.net
+        
+- name: SG2_ILPED_BUG2
+  server: 104.17.3.81
+  port: 443
+  type: trojan
+  password: vvip-tes
+  network: ws
+  sni: sg-02.idssh.net
+  skip-cert-verify: true
+  udp: true
+  ws-opts:
+    path: /trojan
+    headers:
+        Host: sg-02.idssh.net
+
+- name: SG7_ILPED_BUG1
+  server: 104.17.2.81
+  port: 443
+  type: trojan
+  password: vvip-tes
+  network: ws
+  sni: sg-07.idssh.net
+  skip-cert-verify: true
+  udp: true
+  ws-opts:
+    path: /trojan
+    headers:
+        Host: sg-07.idssh.net
+        
+- name: SG7_ILPED_BUG2
+  server: 104.17.3.81
+  port: 443
+  type: trojan
+  password: vvip-tes
+  network: ws
+  sni: sg-07.idssh.net
+  skip-cert-verify: true
+  udp: true
+  ws-opts:
+    path: /trojan
+    headers:
+        Host: sg-07.idssh.net
+
+proxy-groups:
+  - name: ALL_INJECT
+    type: load-balance
+    proxies:
+      - XL_AKRAB
+      - XL_FLEX
+      - ISAT_EDU
+      - TSEL_ILPED
+    url: 'http://www.gstatic.com/generate_204'
+    interval: 100
+  - name: XL_AKRAB
+    type: load-balance
+    strategy: round-robin
+    disable-udp: false
+    proxies:
+      - ID3_AKRAB_BUG1
+      - ID3_AKRAB_BUG2
+      - ID3_AKRAB_BUG3
+      - SG2_AKRAB_BUG1
+      - SG2_AKRAB_BUG2
+      - SG2_AKRAB_BUG3
+      - SG7_AKRAB_BUG1
+      - SG7_AKRAB_BUG2
+      - SG7_AKRAB_BUG3
+    url: 'http://www.gstatic.com/generate_204'
+    interval: 100
+  - name: XL_FLEX
+    type: load-balance
+    strategy: round-robin
+    disable-udp: false
+    proxies:
+      - ID3_FLEX_BUG1
+      - ID3_FLEX_BUG2
+      - ID3_FLEX_BUG3
+      - SG2_FLEX_BUG1
+      - SG2_FLEX_BUG2
+      - SG2_FLEX_BUG3
+      - SG7_FLEX_BUG1
+      - SG7_FLEX_BUG2
+      - SG7_FLEX_BUG3
+    url: 'http://www.gstatic.com/generate_204'
+    interval: 100
+  - name: ISAT_EDU
+    type: load-balance
+    strategy: round-robin
+    disable-udp: false
+    proxies:
+      - ID3_ISATEDU_BUG1
+      - ID3_ISATEDU_BUG2
+      - ID3_ISATEDU_BUG3
+      - SG2_ISATEDU_BUG1
+      - SG2_ISATEDU_BUG2
+      - SG2_ISATEDU_BUG3
+      - SG7_ISATEDU_BUG1
+      - SG7_ISATEDU_BUG2
+      - SG7_ISATEDU_BUG3
+    url: 'http://www.gstatic.com/generate_204'
+    interval: 100
+  - name: TSEL_ILPED
+    type: load-balance
+    strategy: round-robin
+    disable-udp: false
+    proxies:
+      - ID3_ILPED_BUG1
+      - ID3_ILPED_BUG2
+      - SG2_ILPED_BUG1
+      - SG2_ILPED_BUG2
+      - SG7_ILPED_BUG1
+      - SG7_ILPED_BUG2
+    url: 'http://www.gstatic.com/generate_204'
+    interval: 100
+  - name: WHATSAPP
+    type: select
+    proxies:
+      - DIRECT
+      - XL_AKRAB
+      - XL_FLEX
+      - ISAT_EDU
+      - TSEL_ILPED
+    url: 'http://www.gstatic.com/generate_204'
+    interval: 100
+rules:
+ - RULE-SET,whatsapp,WHATSAPP
+ - IP-CIDR,198.18.0.1/16,REJECT,no-resolve
+ - MATCH,ALL_INJECT
+ - MATCH,XL_AKRAB
+ - MATCH,XL_FLEX
+ - MATCH,ISAT_EDU
+ - MATCH,TSEL_ILPED
+rule-providers:
+  whatsapp:
+    type: http
+    behavior: classical
+    path: "./whatsapp.yaml"
+    url: https://raw.githubusercontent.com/berkasaink/proxy_provider/main/whatsapp.yaml
+    interval: 86400
